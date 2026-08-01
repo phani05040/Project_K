@@ -1,70 +1,1497 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f3f7ff 0%, #eef4ff 45%, #f8fbff 100%);
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* NAVBAR */
 .navbar {
-  background: #1e3c72;
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
   color: white;
-  padding: 15px 30px;
-  font-size: 20px;
-  font-weight: bold;
+  padding: 18px 30px;
+  font-size: 22px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(30, 60, 114, 0.2);
 }
 
 /* CONTAINER */
 .container {
-  padding: 30px;
+  padding: 32px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 /* GRID DASHBOARD */
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
 }
 
 /* CARDS */
-.card {
+.dashboard-card {
   background: white;
   padding: 25px;
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
   text-decoration: none;
-  color: black;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  color: #1f2937;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  background: #007bff;
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, #007bff, #3b82f6);
   color: white;
+  box-shadow: 0 16px 40px rgba(0, 123, 255, 0.25);
 }
 
 /* BUTTON */
 .btn {
-  padding: 12px;
-  background: #007bff;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 999px;
   cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
-  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.3);
 }
 
 /* INPUT */
 input, textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px 14px;
   margin: 10px 0;
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
 /* HEADINGS */
 h2 {
   margin-bottom: 20px;
+  color: #0f172a;
+}
+
+
+/* Welcome Card */
+.welcome-card {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 30px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
+}
+
+.welcome-card h1 {
+  margin: 0;
+}
+
+.welcome-card p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Statistics */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.stat-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.stat-box h2 {
+  color: #2563eb;
+  font-size: 35px;
+  margin: 0;
+}
+
+.stat-box p {
+  color: #555;
+}
+
+/* Dashboard Cards */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 25px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #111827;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(37,99,235,.25);
+}
+
+.dashboard-card .icon {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.dashboard-card h3 {
+  margin-bottom: 8px;
+}
+
+.dashboard-card p {
+  color: #666;
+}
+
+.page-header{
+  margin-bottom:30px;
+}
+
+.page-header h2{
+  margin-bottom:5px;
+}
+
+.page-header p{
+  color:#666;
+}
+
+.complaints-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:25px;
+}
+
+.complaint-card{
+  background:#fff;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.complaint-card:hover{
+  transform:translateY(-5px);
+}
+
+.complaint-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.complaint-icon{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#2563eb;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:22px;
+}
+
+.status{
+  padding:6px 15px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.pending{
+  background:#fff4d6;
+  color:#c77b00;
+}
+
+.resolved{
+  background:#dcfce7;
+  color:#15803d;
+}
+
+.complaint-text{
+  margin:15px 0 20px;
+  line-height:1.6;
+  color:#555;
+}
+
+.resolved-btn{
+  background:#16a34a;
+  cursor:not-allowed;
+}
+
+.empty-card{
+  background:white;
+  padding:40px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+
+/* ==========================
+   Admin Feedback
+========================== */
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.feedback-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border-top: 5px solid #10b981;
+}
+
+.feedback-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(16,185,129,0.2);
+}
+
+.feedback-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #10b981;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.feedback-card h3 {
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.feedback-message {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+
+/* ==========================
+   Admin Notices
+========================== */
+
+.notice-form {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.notice-icon {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+}
+
+.notice-form input,
+.notice-form textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 16px;
+  resize: none;
+}
+
+.notice-form input:focus,
+.notice-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.notice-btn {
+  width: 100%;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================
+   Admin Rooms
+========================== */
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 25px;
+}
+
+.room-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.room-card:hover {
+  transform: translateY(-6px);
+}
+
+.room-icon {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.status {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 6px 15px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+.available {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.occupied {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.student-name {
+  margin: 15px 0;
+  color: #555;
+  font-weight: 500;
+}
+
+.assign-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.occupied-btn {
+  width: 100%;
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ==========================
+   Admin Visitors
+========================== */
+
+.visitors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.visitor-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transition: 0.3s;
+}
+
+.visitor-card:hover {
+  transform: translateY(-6px);
+}
+
+.visitor-icon {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.visitor-card h3 {
+  margin-bottom: 12px;
+}
+
+.visitor-card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.approve-btn {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.approved-btn {
+  width: 100%;
+  margin-top: 18px;
+  background: #16a34a;
+  cursor: not-allowed;
+}
+
+.approved {
+  background: #dcfce7;
+  color: #15803d;
+} 
+
+/* ==========================
+   Student Complaint Form
+========================== */
+
+.complaint-form {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.complaint-form-icon {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ef4444,#dc2626);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+}
+
+.complaint-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  resize: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.complaint-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.complaint-btn {
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================
+   Student Feedback Form
+========================== */
+
+.feedback-form {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.feedback-form-icon {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#10b981,#059669);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  resize: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.feedback-form textarea:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,.15);
+}
+
+.feedback-btn {
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =====================
+   Fees Dashboard
+===================== */
+
+.fee-card {
+  max-width:700px;
+  margin:30px auto;
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 12px 35px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+
+.payment-icon {
+  width:80px;
+  height:80px;
+  margin:auto;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:35px;
+}
+
+
+.payment-details {
+  margin-top:25px;
+}
+
+
+.payment-details p {
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  border-bottom:1px solid #eee;
+  font-size:16px;
+}
+
+
+.green {
+  color:#16a34a;
+}
+
+
+.red {
+  color:#dc2626;
+}
+
+
+.pay-btn {
+  width:100%;
+  margin-top:25px;
+  font-size:17px;
+}
+
+
+.success-payment {
+  margin-top:25px;
+  padding:15px;
+  background:#dcfce7;
+  color:#15803d;
+  border-radius:12px;
+  font-weight:600;
+}
+
+
+.fee-icon {
+  font-size:35px;
+  color:#2563eb;
+  margin-bottom:10px;
+}
+
+.fee-icon.paid {
+  color:#16a34a;
+}
+
+.fee-icon.due {
+  color:#dc2626;
+}
+
+/* =====================
+   Food Menu
+===================== */
+
+.food-grid {
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+
+.food-card {
+
+  background:white;
+  padding:25px;
+  border-radius:18px;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,.08);
+
+  transition:.3s;
+
+  border-top:5px solid #f59e0b;
+}
+
+
+.food-card:hover {
+
+  transform:translateY(-7px);
+
+  box-shadow:
+  0 20px 40px rgba(245,158,11,.2);
+
+}
+
+
+.food-card h3 {
+
+  text-align:center;
+
+  color:#1e3a8a;
+
+  margin-bottom:25px;
+
+}
+
+
+
+.meal {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  background:#f8fafc;
+
+  padding:15px;
+
+  border-radius:12px;
+
+  margin-bottom:15px;
+
+}
+
+
+
+.meal span {
+
+  font-size:13px;
+
+  color:#64748b;
+
+}
+
+
+
+.meal p {
+
+  margin:5px 0 0;
+
+  font-weight:600;
+
+  color:#1f2937;
+
+}
+
+
+
+.breakfast-icon {
+
+  color:#f59e0b;
+
+  font-size:25px;
+
+}
+
+
+.lunch-icon {
+
+  color:#16a34a;
+
+  font-size:25px;
+
+}
+
+
+.dinner-icon {
+
+  color:#6366f1;
+
+  font-size:25px;
+
+} 
+
+
+/* Student Dashboard Cards */
+
+.dashboard-card {
+
+  background:white;
+  padding:30px;
+
+  border-radius:18px;
+
+  text-decoration:none;
+
+  color:#111827;
+
+  text-align:center;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,.08);
+
+  transition:.3s;
+
+}
+
+
+.dashboard-card:hover {
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 20px 40px rgba(37,99,235,.2);
+
+}
+
+
+
+.dashboard-card .icon {
+
+  width:70px;
+  height:70px;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:white;
+
+  font-size:30px;
+
+  margin-bottom:18px;
+
+}
+
+
+
+.dashboard-card h3 {
+
+  margin-bottom:8px;
+
+}
+
+
+.dashboard-card p {
+
+  color:#64748b;
+
+  font-size:14px;
+
+}
+
+
+/* =====================
+   Login Page
+===================== */
+
+
+.login-page {
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #1e3a8a
+  );
+
+}
+
+
+
+.login-card {
+
+  width:400px;
+
+  background:white;
+
+  padding:40px;
+
+  border-radius:22px;
+
+  text-align:center;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.2);
+
+}
+
+
+
+.login-icon {
+
+  width:80px;
+
+  height:80px;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  background:#2563eb;
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:35px;
+
+  margin-bottom:20px;
+
+}
+
+
+
+.login-card h2 {
+
+  margin-bottom:8px;
+
+}
+
+
+
+.login-card p {
+
+  color:#64748b;
+
+  margin-bottom:25px;
+
+}
+
+
+
+.login-card select {
+
+  width:100%;
+
+  padding:13px;
+
+  border-radius:12px;
+
+  border:1px solid #ddd;
+
+  margin-bottom:20px;
+
+}
+
+
+
+.input-box {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  border:1px solid #ddd;
+
+  padding:12px;
+
+  border-radius:12px;
+
+  margin-bottom:15px;
+
+}
+
+
+
+.input-box input {
+
+  border:none;
+
+  outline:none;
+
+  width:100%;
+
+  margin:0;
+
+}
+
+
+
+.login-btn {
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:30px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  color:white;
+
+  font-size:17px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:10px;
+
+  transition:.3s;
+
+}
+
+
+
+.login-btn:hover {
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 12px 25px rgba(37,99,235,.35);
+
+} 
+
+
+/* =====================
+   Student Notices
+===================== */
+
+
+.notices-grid {
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap:25px;
+
+}
+
+
+
+.notice-card {
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,.08);
+
+  border-left:6px solid #f59e0b;
+
+  transition:.3s;
+
+}
+
+
+
+.notice-card:hover {
+
+  transform:translateY(-6px);
+
+  box-shadow:
+  0 20px 40px rgba(245,158,11,.2);
+
+}
+
+
+
+.notice-top {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:20px;
+
+}
+
+
+
+.notice-icon {
+
+  width:60px;
+
+  height:60px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #f59e0b,
+    #d97706
+  );
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:25px;
+
+}
+
+
+
+.notice-top span {
+
+  background:#fef3c7;
+
+  color:#b45309;
+
+  padding:6px 14px;
+
+  border-radius:20px;
+
+  font-size:13px;
+
+  font-weight:600;
+
+}
+
+
+
+.notice-card h3 {
+
+  color:#1e293b;
+
+  margin-bottom:12px;
+
+}
+
+
+
+.notice-content {
+
+  color:#64748b;
+
+  line-height:1.7;
+
+}
+
+
+
+.notice-card small {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  margin-top:20px;
+
+  color:#94a3b8;
+
+}
+
+
+
+.empty-card {
+
+  background:white;
+
+  padding:40px;
+
+  text-align:center;
+
+  border-radius:18px;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* =====================
+   Student Rooms
+===================== */
+
+
+.student-room-card {
+
+  background:white;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  text-align:center;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,.08);
+
+  transition:.3s;
+
+  border-top:5px solid #2563eb;
+
+}
+
+
+
+.student-room-card:hover {
+
+  transform:translateY(-7px);
+
+  box-shadow:
+  0 20px 40px rgba(37,99,235,.2);
+
+}
+
+
+
+.student-room-card .room-icon {
+
+  width:70px;
+
+  height:70px;
+
+  margin:auto;
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  border-radius:50%;
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:28px;
+
+  margin-bottom:18px;
+
+}
+
+
+
+.student-room-card p {
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:7px;
+
+  color:#64748b;
+
+  margin:12px 0;
+
+}
+
+
+
+.student-info {
+
+  margin-top:20px;
+
+}
+
+
+
+.status {
+
+  display:inline-block;
+
+  padding:7px 18px;
+
+  border-radius:25px;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  margin:15px 0;
+
+}
+
+
+
+.available {
+
+  background:#dcfce7;
+
+  color:#15803d;
+
+}
+
+
+
+.occupied {
+
+  background:#fee2e2;
+
+  color:#dc2626;
+
+}
+
+
+/* =====================
+   Visitor Registration
+===================== */
+
+
+.visitor-form {
+
+  max-width:600px;
+
+  margin:auto;
+
+  background:white;
+
+  padding:35px;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.visitor-form-icon {
+
+  width:80px;
+
+  height:80px;
+
+  margin:auto;
+
+  margin-bottom:25px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #06b6d4,
+    #0891b2
+  );
+
+  color:white;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:35px;
+
+}
+
+
+
+.form-input {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  border:1px solid #d1d5db;
+
+  padding:12px 15px;
+
+  border-radius:12px;
+
+  margin-bottom:18px;
+
+}
+
+
+
+.form-input input {
+
+  border:none;
+
+  outline:none;
+
+  width:100%;
+
+  margin:0;
+
+}
+
+
+
+.form-input:focus-within {
+
+  border-color:#2563eb;
+
+  box-shadow:
+  0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+
+
+.visitor-btn {
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-size:16px;
+
 }
